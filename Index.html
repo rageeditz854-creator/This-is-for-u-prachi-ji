@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry, Prachi Ji</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            color: #ff4081;
+            font-size: 2em;
+            animation: float 6s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        .apology-message {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Sorry, Prachi Ji</h1>
+        <div class="apology-message">
+            <p>Sorry for everything I have done till now, Prachi Ji. I hope you can forgive me. 💔</p>
+        </div>
+        <p>From the bottom of my heart, I apologize for any hurt I've caused. Let's move forward with positivity.</p>
+    </div>
+
+    <script>
+        // Generate floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 6 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
